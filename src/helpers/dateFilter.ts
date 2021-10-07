@@ -16,6 +16,15 @@ export const getCurrentMonth = () => {
             newList.push(list[i]);
         }
     }
-    
     return newList
  }
+
+ export const formatDate = (date: Date): string => {
+     let year = date.getFullYear()
+     let month = date.getMonth() + 1
+     let day = date.getDate()
+
+     return `${addZerotoDate(day)}/${addZerotoDate(month)}/${year}`
+ }
+
+ const addZerotoDate = (n: number): string => n < 10 ? `0${n}` : `${n}`
